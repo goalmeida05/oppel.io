@@ -1,0 +1,364 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, #d0cece, #fff); /* Degradê de cinza (#888) para branco (#fff) */
+    background-size: 100% 100%; /* Cobrir toda a largura e altura da página */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fixar o plano de fundo para que ele não role com a página */
+    height: 100%; /* 100% da altura da janela de visualização */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    max-width: 100%; /* O cabeçalho ocupa a largura total */
+    position: absolute;
+    top: -10px;
+    right: 0;
+}
+
+.header img {
+    max-width: 100%;
+    height: auto;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    position: relative; /* Defina o posicionamento relativo para os botões do menu */
+    top: 87px; /* Ajuste a distância vertical entre o cabeçalho e os botões do menu conforme necessário */
+}
+  
+.tab-button {
+    border: none;
+    background-color: lightgray;
+    padding: 10px 20px;
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
+    transition: background-color 0.3s, filter 0.3s;
+  }
+  
+.tab-button.active {
+    background-color: black; /* Muda a cor do botão ativo para preto */
+    color: white; /* Define a cor do texto do botão ativo como branco */
+  }
+  
+.tab-button:hover {
+    background-color: black;
+    color: white;
+    filter: brightness(0.9); /* Aplica um filtro para escurecer levemente */
+  }
+
+
+.slider-container {
+    background-color: white; /* Cor de fundo branca */
+    border-radius: 5px; /* Borda arredondada */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin: 110px auto 0; /* Centraliza horizontalmente e define margem superior */
+    width: 100%;
+    max-width: 500px;
+    padding: 10px; /* Espaçamento interno */
+    max-height: 300px; /* Defina a altura máxima desejada */
+}
+/* Estilos para o container do carrossel */
+.slider {
+  width: 100%;
+  height: 300px;
+}
+  
+  /* Estilo para os botões de navegação flutuante */
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 999; /* Certifique-se de que os botões fiquem acima das imagens */
+  }
+  
+.prev-button {
+    left: 10px;
+  }
+  
+.next-button {
+    right: 10px;
+  }
+
+.slider img {
+    max-width: 100%; /* Define a largura máxima das imagens para ocupar 100% do espaço disponível */
+    height: auto;
+}
+
+
+.social-icons {
+    position: absolute;
+    top: 470px; /* Ajuste a posição vertical conforme necessário */
+    right: 50px; /* Ajuste a posição horizontal conforme necessário */
+}
+
+.social-icons a {
+    margin-left: 10px; /* Espaço entre os ícones */
+}
+
+
+.facebook-icon {
+    color: #1569d8; /* Cor do Facebook (azul) */
+}
+
+.instagram-icon {
+    color: #cc379d; /* Cor do Instagram (rosa) */
+}
+
+
+  
+.tab-content {
+    align-items: center; /* Centralize o conteúdo horizontalmente */
+    text-align: center; /* Centralize o texto dentro do conteúdo */
+    display: none;
+    padding: 0px;
+  }
+  
+.tab-content.active {
+    display: block;
+  }
+  
+.tab-content-container {
+    background-color: white; /* Fundo branco */
+    padding: 50px; /* Espaçamento interno */
+    border-radius: 5px; /* Borda arredondada */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin-top: 30px; /* Espaçamento superior */
+    min-height: calc(100vh - 200px);
+  }
+
+
+.content-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 0px;
+    max-width: 1400px; /* Defina a largura máxima desejada */
+    margin-left: auto; /* Centralize horizontalmente definindo margem esquerda e direita como "auto" */
+    margin-right: auto;
+}
+
+
+.tab-content h2 {
+    text-align: left; /* Alinha o título à esquerda */
+}
+
+.tab-content p{
+    text-align: justify; /* Alinha o título à esquerda */
+}
+
+.image-section {
+    display: flex;
+    justify-content: space-between; /* Distribui as imagens com espaçamento igual */
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+.image-item {
+    display: flex;
+    flex-direction: column; /* Alinhar conteúdo verticalmente */
+    align-items: center; /* Centralizar horizontalmente */
+    text-align: center; /* Centralizar o texto horizontalmente */
+  }
+  
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+    padding: 10px; /* Adiciona espaço interno à imagem */
+    border: 1px solid #ccc; /* Adiciona uma borda fina */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+  }
+  
+.image-item p {
+    font-weight: bold;
+    align-self: center; /* Centraliza verticalmente o texto */
+  }
+  
+.image-section2 {
+    display: flex;
+    justify-content: space-between; /* Distribui as imagens com espaçamento igual */
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+.image-item2 {
+  display: flex;
+  flex-direction: column; /* Alinhar conteúdo verticalmente */
+  align-items: center; /* Centralizar horizontalmente */
+  text-align: center; /* Centralizar o texto horizontalmente */
+  }
+  
+.image-item2 img {
+    max-width: 100%;
+    height: auto;
+    width: 210px;
+    padding: 10px; /* Adiciona espaço interno à imagem */
+    border: 1px solid #ccc; /* Adiciona uma borda fina */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+  }
+  
+.image-item2 p {
+    align-self: center; /* Centraliza verticalmente o texto */
+    font-weight: bold;
+  }
+  
+.image-section3 {
+    display: flex;
+    justify-content: space-between; /* Distribui as imagens com espaçamento igual */
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+.image-item3 {
+    text-align: center;
+    flex: 1; /* Distribui o espaço igualmente entre as imagens */
+    margin: 0 30px; /* Espaçamento horizontal entre as imagens */
+  }
+  
+.image-item3 img {
+    max-width: 100%;
+    height: auto;
+    width: 210px;
+    padding: 10px; /* Adiciona espaço interno à imagem */
+    border: 1px solid #ccc; /* Adiciona uma borda fina */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+  }
+  
+.image-item3 p {
+    align-self: center; /* Centraliza verticalmente o texto */
+    font-weight: bold;
+  }
+  
+
+  /* Estilizações para a lista não ordenada */
+  .clickable-list {
+    margin-top: 20px;
+  }
+  
+  .clickable-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .clickable-list li {
+    margin-bottom: 10px;
+  }
+  
+  .clickable-list a {
+    display: block;
+    padding: 10px;
+    background-color: lightgray;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .clickable-list a:hover {
+    background-color: gray;
+    color: white;
+  }
+
+
+.tab-content {
+    align-items: center; /* Centralize o conteúdo horizontalmente */
+    text-align: center; /* Centralize o texto dentro do conteúdo */
+    display: none;
+    padding: 0px;
+  }
+  
+.tab-content.active {
+    display: block;
+  }
+  
+.tab-content-container {
+    background-color: white; /* Fundo branco */
+    padding: 50px; /* Espaçamento interno */
+    border-radius: 5px; /* Borda arredondada */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin-top: 30px; /* Espaçamento superior */
+    min-height: calc(100vh - 200px);
+  }
+
+
+.content-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 0px;
+    max-width: 1400px; /* Defina a largura máxima desejada */
+    margin-left: auto; /* Centralize horizontalmente definindo margem esquerda e direita como "auto" */
+    margin-right: auto;
+}
+
+
+.tab-content h2 {
+    text-align: left; /* Alinha o título à esquerda */
+}
+
+.tab-content p{
+    text-align: justify; /* Alinha o título à esquerda */
+}
+
+
+
+
+  /* Estilos para o formulário */
+form {
+  max-width: 500px; /* Define a largura máxima do formulário */
+  margin: 0 auto; /* Centraliza o formulário horizontalmente */
+  padding: 20px;
+  background-color: #aeadad;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+
+/* Estilos para os rótulos dos campos */
+label {
+  display: block; /* Coloca cada rótulo em uma nova linha */
+  margin-bottom: 5px;
+}
+
+/* Estilos para os campos de entrada de texto */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #737272;
+  border-radius: 5px;
+}
+
+/* Estilos para o botão de envio */
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #454545;
+}
