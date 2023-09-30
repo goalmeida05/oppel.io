@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to top, #d0cece, #fff); /* Degradê de cinza (#888) para branco (#fff) */
+    background: rgb(243, 241, 241);
     background-size: 100% 100%; /* Cobrir toda a largura e altura da página */
     background-repeat: no-repeat;
     background-attachment: fixed; /* Fixar o plano de fundo para que ele não role com a página */
@@ -13,7 +13,7 @@ body {
   background-color: black;
   height: 24px; /* Altura desejada da barra */
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 9999; /* Ajuste o valor do z-index conforme necessário */
@@ -28,10 +28,10 @@ body {
 }
 
 .bottom-bar {
-  height: 70px; /* Altura desejada da segunda barra */
+  height: 71px; /* Altura desejada da segunda barra */
   width: 100%;
-  background: linear-gradient(45deg, #010163, #800080); /* Degrade de azul escuro a roxo */
-  position: fixed;
+  background: linear-gradient(45deg, #530101, #800080); /* Degrade de azul escuro a roxo */
+  position: absolute;
   top: 4px; /* Posicione abaixo da barra preta */
   left: 0;
   z-index: 9998; /* Coloque abaixo da barra preta */
@@ -44,26 +44,27 @@ body {
   margin: 0;
   position: relative;
   top: 75px;
-  height: 70px;
+  height: 75px;
   background-color: white;
 }
 
 /* Estilos para os botões do menu */
 .tab-button {
+  position: fixed;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 25px;
   cursor: pointer;
   text-align: center;
   position: relative;
   background-color: white; /* Fundo branco no estado normal */
   color: black; /* Cor do texto no estado normal */
   overflow: hidden; /* Esconder qualquer conteúdo que saia do botão */
-  margin: 0 5px; /* Espaçamento horizontal entre os botões */
+  margin: 0 0px; /* Espaçamento horizontal entre os botões */
 }
 
 
 .tab-button.active {
-  background-color: rgb(227, 210, 23); /* Fundo amarelo na aba ativa */
+  background-color: rgb(249, 176, 66); /* Fundo amarelo na aba ativa */
   color: black; /* Cor do texto na aba ativa */
 }
 
@@ -75,7 +76,7 @@ body {
   left: 50%;
   width: 0;
   height: 100%;
-  background-color: rgb(227, 210, 23); /* Cor do efeito de abertura das cortinas */
+  background-color: rgb(249, 176, 66); /* Cor do efeito de abertura das cortinas */
   transform-origin: center; /* Origem da transformação no centro */
   transition: width 0.3s ease-in-out; /* Efeito de transição suave */
 }
@@ -90,7 +91,7 @@ body {
 
 
 .tabs .tab-button:first-child {
-  margin-left: 0;
+  margin-left: 5px;
 }
 
 .tabs .tab-button:last-child {
@@ -103,59 +104,10 @@ body {
   color: white; /* Cor do texto no hover */
 }
 
-
-
-
-
-.slider-container {
-    background-color: white; /* Cor de fundo branca */
-    border-radius: 5px; /* Borda arredondada */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-    margin: 110px auto 0; /* Centraliza horizontalmente e define margem superior */
-    width: 100%;
-    max-width: 500px;
-    padding: 10px; /* Espaçamento interno */
-    max-height: 300px; /* Defina a altura máxima desejada */
-}
-
-/* Estilos para o container do carrossel */
-.slider {
-  width: 100%;
-  height: 300px;
-}
-  
-  /* Estilo para os botões de navegação flutuante */
-.prev-button,
-.next-button {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    z-index: 999; /* Certifique-se de que os botões fiquem acima das imagens */
-  }
-  
-.prev-button {
-    left: 10px;
-  }
-  
-.next-button {
-    right: 10px;
-  }
-
-.slider img {
-    max-width: 100%; /* Define a largura máxima das imagens para ocupar 100% do espaço disponível */
-    height: auto;
-}
-
-
 .social-icons {
     position: absolute;
-    top: 470px; /* Ajuste a posição vertical conforme necessário */
-    right: 50px; /* Ajuste a posição horizontal conforme necessário */
+    top: 43px; /* Ajuste a posição vertical conforme necessário */
+    right: 10px; /* Ajuste a posição horizontal conforme necessário */
 }
 
 .social-icons a {
@@ -172,46 +124,33 @@ body {
 }
 
 
-  
 .tab-content {
-    align-items: center; /* Centralize o conteúdo horizontalmente */
-    text-align: center; /* Centralize o texto dentro do conteúdo */
-    display: none;
-    padding: 0px;
-  }
-  
+  align-items: center; /* Centralize o conteúdo horizontalmente */
+  text-align: center; /* Centralize o texto dentro do conteúdo */
+  display: none;
+  padding: 40px;
+  margin-top: 50px;
+}
+
 .tab-content.active {
-    display: block;
-  }
-  
+  display: block;
+}
+
 .tab-content-container {
-    background-color: white; /* Fundo branco */
-    padding: 50px; /* Espaçamento interno */
-    border-radius: 5px; /* Borda arredondada */
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Sombra */
-    margin-top: 30px; /* Espaçamento superior */
-    min-height: calc(100vh - 200px);
-  }
-
-
-.content-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    margin-top: 0px;
-    max-width: 1400px; /* Defina a largura máxima desejada */
-    margin-left: auto; /* Centralize horizontalmente definindo margem esquerda e direita como "auto" */
-    margin-right: auto;
+  background-color: #aca9a9; /* Cor de fundo vermelha (por exemplo) */
+  max-width: 100%; /* Ocupa todo o espaço horizontal */
+  margin: 0 auto; /* Centraliza o container horizontalmente, se necessário */
+  padding: 20px; 
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
 
 .tab-content h2 {
-    text-align: left; /* Alinha o título à esquerda */
+  text-align: left; /* Alinha o título à esquerda */
 }
 
 .tab-content p{
-    text-align: justify; /* Alinha o título à esquerda */
+  text-align: justify; /* Alinha o título à esquerda */
 }
 
 .image-section {
@@ -328,48 +267,6 @@ body {
   }
 
 
-.tab-content {
-    align-items: center; /* Centralize o conteúdo horizontalmente */
-    text-align: center; /* Centralize o texto dentro do conteúdo */
-    display: none;
-    padding: 0px;
-  }
-  
-.tab-content.active {
-    display: block;
-  }
-  
-.tab-content-container {
-    background-color: white; /* Fundo branco */
-    padding: 50px; /* Espaçamento interno */
-    border-radius: 5px; /* Borda arredondada */
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Sombra */
-    margin-top: 30px; /* Espaçamento superior */
-    min-height: calc(100vh - 200px);
-  }
-
-
-.content-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    margin-top: 0px;
-    max-width: 1400px; /* Defina a largura máxima desejada */
-    margin-left: auto; /* Centralize horizontalmente definindo margem esquerda e direita como "auto" */
-    margin-right: auto;
-}
-
-
-.tab-content h2 {
-    text-align: left; /* Alinha o título à esquerda */
-}
-
-.tab-content p{
-    text-align: justify; /* Alinha o título à esquerda */
-}
-
-
 
 
   /* Estilos para o formulário */
@@ -414,4 +311,23 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #454545;
+}
+
+
+.back-bar {
+  background-color: black;
+  height: 30px; /* Altura desejada da barra */
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999; /* Ajuste o valor do z-index conforme necessário */
+  display: flex;
+  justify-content: flex-end; /* Alinhar o texto na extrema direita */
+  align-items: center; /* Centralizar verticalmente o texto */
+}
+
+.back-bar-text {
+  color: white;
+  margin-right: 10px; /* Espaçamento entre o texto e a borda direita */
 }
