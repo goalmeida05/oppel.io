@@ -9,50 +9,102 @@ body {
     height: 100%; /* 100% da altura da janela de visualização */
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
-    max-width: 100%; /* O cabeçalho ocupa a largura total */
-    position: absolute;
-    top: -10px;
-    right: 0;
+.top-bar {
+  background-color: black;
+  height: 24px; /* Altura desejada da barra */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Ajuste o valor do z-index conforme necessário */
+  display: flex;
+  justify-content: flex-end; /* Alinhar o texto na extrema direita */
+  align-items: center; /* Centralizar verticalmente o texto */
 }
 
-.header img {
-    max-width: 100%;
-    height: auto;
+.top-bar-text {
+  color: white;
+  margin-right: 10px; /* Espaçamento entre o texto e a borda direita */
 }
 
+.bottom-bar {
+  height: 70px; /* Altura desejada da segunda barra */
+  width: 100%;
+  background: linear-gradient(45deg, #010163, #800080); /* Degrade de azul escuro a roxo */
+  position: fixed;
+  top: 4px; /* Posicione abaixo da barra preta */
+  left: 0;
+  z-index: 9998; /* Coloque abaixo da barra preta */
+}
+
+/* Estilos para o menu */
 .tabs {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    position: relative; /* Defina o posicionamento relativo para os botões do menu */
-    top: 87px; /* Ajuste a distância vertical entre o cabeçalho e os botões do menu conforme necessário */
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  position: relative;
+  top: 75px;
+  height: 70px;
+  background-color: white;
 }
-  
+
+/* Estilos para os botões do menu */
 .tab-button {
-    border: none;
-    background-color: lightgray;
-    padding: 10px 20px;
-    cursor: pointer;
-    flex-grow: 1;
-    text-align: center;
-    transition: background-color 0.3s, filter 0.3s;
-  }
-  
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  background-color: white; /* Fundo branco no estado normal */
+  color: black; /* Cor do texto no estado normal */
+  overflow: hidden; /* Esconder qualquer conteúdo que saia do botão */
+  margin: 0 5px; /* Espaçamento horizontal entre os botões */
+}
+
+
 .tab-button.active {
-    background-color: black; /* Muda a cor do botão ativo para preto */
-    color: white; /* Define a cor do texto do botão ativo como branco */
-  }
-  
-.tab-button:hover {
-    background-color: black;
-    color: white;
-    filter: brightness(0.9); /* Aplica um filtro para escurecer levemente */
-  }
+  background-color: rgb(227, 210, 23); /* Fundo amarelo na aba ativa */
+  color: black; /* Cor do texto na aba ativa */
+}
+
+.tab-button::before,
+.tab-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background-color: rgb(227, 210, 23); /* Cor do efeito de abertura das cortinas */
+  transform-origin: center; /* Origem da transformação no centro */
+  transition: width 0.3s ease-in-out; /* Efeito de transição suave */
+}
+
+.tab-button::before {
+  transform: translateX(-50%); /* Ajuste para centralizar o elemento */
+}
+
+.tab-button::after {
+  transform: translateX(-50%); /* Ajuste para centralizar o elemento */
+}
+
+
+.tabs .tab-button:first-child {
+  margin-left: 0;
+}
+
+.tabs .tab-button:last-child {
+  margin-right: 0;
+}
+
+.tab-button:hover::before,
+.tab-button:hover::after {
+  width: 100%; /* Ao passar o mouse, a largura se torna 100% */
+  color: white; /* Cor do texto no hover */
+}
+
+
+
 
 
 .slider-container {
@@ -65,6 +117,7 @@ body {
     padding: 10px; /* Espaçamento interno */
     max-height: 300px; /* Defina a altura máxima desejada */
 }
+
 /* Estilos para o container do carrossel */
 .slider {
   width: 100%;
