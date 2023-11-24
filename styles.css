@@ -8473,6 +8473,6 @@
 .person_img {
   border-radius: 50%; /* Isso fará com que a imagem seja circular */
   width: 150px; /* Defina a largura desejada */
-  height: 150px; /* Defina a altura desejada */
+  height: 110px; /* Defina a altura desejada */
   object-fit: cover; /* Isso ajudará a manter as proporções corretas da imagem */
 }
