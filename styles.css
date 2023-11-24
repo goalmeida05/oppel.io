@@ -480,7 +480,7 @@
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px; }
-  
+
   .no-gutters {
     margin-right: 0;
     margin-left: 0; }
@@ -8415,3 +8415,64 @@
     .horizontal-list li {
       margin-right: 20px; /* Espaçamento entre os itens */
      }
+
+
+/* Estilos para a Seção de Publicações */
+
+.publications-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 200px)); /* Mantém três colunas de tamanho igual */
+  gap: 50px; /* Aumenta o espaçamento entre os itens do grid se necessário */
+  margin: 0 auto; /* Centraliza o container */
+  max-width: 1200px; /* Largura máxima do container */
+  justify-content: center;
+}
+
+/* Estilos para cada item de publicação individual */
+.publication-item {
+  /* Remova a propriedade de largura, pois o grid já define a largura das colunas */
+  margin: 10px auto; /* Margem ao redor de cada item */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombreamento para dar profundidade */
+  transition: transform 0.3s ease-in-out; /* Animação para interação do usuário */
+
+}
+
+/* Estilos para a capa do livro dentro de cada item de publicação */
+.publication-cover {
+  width: 100%; /* Faz a imagem preencher o container do item */
+  height: auto; /* Mantém a proporção da imagem */
+  border-bottom: 1px solid #ccc; /* Linha de separação entre a imagem e o texto */
+}
+
+/* Estilos para o título do livro dentro de cada item de publicação */
+.publication-title {
+  padding: 8px; /* Espaçamento interno ao redor do título */
+  text-align: center; /* Centraliza o texto */
+  font-size: 1em; /* Tamanho da fonte */
+  font-weight: bold; /* Torna o texto em negrito */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .publications-container {
+    grid-template-columns: repeat(2, minmax(0, 300px)); /* Ajusta para duas colunas em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .publications-container {
+    grid-template-columns: minmax(0, 300px); /* Ajusta para uma única coluna em telas muito pequenas */
+  }
+}
+
+/* Interatividade - efeito de escala ao passar o mouse */
+.publication-item:hover {
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho do item */
+}
+
+.person_img {
+  border-radius: 50%; /* Isso fará com que a imagem seja circular */
+  width: 150px; /* Defina a largura desejada */
+  height: 150px; /* Defina a altura desejada */
+  object-fit: cover; /* Isso ajudará a manter as proporções corretas da imagem */
+}
