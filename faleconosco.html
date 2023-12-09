@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
 		<title>OPPE</title>
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +12,12 @@
       <!--Incluir o CSS do Bootstrap-->	
 	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	  <link rel="stylesheet" href="styles.css">
-  
+
+
+	  <script async defer
+  			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTq26iRmEmNPqosxfniXAqUMyPLR0GBB4&callback=initMap">
+	</script>
+
   
 	  <style>
 		  li{
@@ -59,6 +65,13 @@
 	  .link-footer{
 			  color: white;
 		  }
+
+		.map-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 65vh; /* Altura total da janela de visualização */
+    }
   
   
 	  </style>
@@ -71,9 +84,6 @@
 					<div class="row">
 							<div class="col">
 								<p class="mb-0 phone" style="margin: 0px"><a href="home.html" style="font-size: 18px;">Observatório de Políticas Públicas para o Envelhecimento</a></p>
-							</div>
-							<div class="col" style="display: flex; justify-content: right;">
-								<a href="https://www.ufv.br/" target="_blank" rel="noopener noreferrer" style="font-size: 18px; margin-left: 15px; color: white;">UFV</a>
 							</div>
 					</div>
 				</div>
@@ -100,39 +110,172 @@
 	  </div>
 	</div>
   </nav>
-		<!-- END nav -->
-        <div class="container" style="margin-top: 30px; display: flex;">
-            <div class="col-sm-8">
-                <p class="maior"><b>Fale Conosco</b></p>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
+
+         <!-- Botão para acionar o formulário -->
+		 <div class="container my-4">
+            <div class="row">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-primary" id="btnCadastrarAcao">CADASTRAR AÇÃO</button>
+                </div>
             </div>
         </div>
+
+        <!-- Formulário (inicialmente oculto) -->
+        <div class="container" id="formCadastro" style="display: none;">
+            <form id = "meuFormulario">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="mb-3">
+                    <label for="cidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidade">
+                </div>
+                <div class="mb-3">
+                    <label for="estado" class="form-label">Estado</label>
+                    <input type="text" class="form-control" id="estado">
+                </div>
+                <div class="mb-3">
+                    <label for="descricaoAcao" class="form-label">Descrição da Ação</label>
+                    <textarea class="form-control" id="descricaoAcao" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+	
+        </div>
+
+		<div class="container">
+			<div class="call-to-action" style="background-color: #f2f2f2; padding: 20px; text-align: center; border-radius: 5px;">
+				<h2>Faça uma consulta de Boas Práticas</h2>
+				<p>Clique no botão abaixo e pesquise todas as boas práticas já cadastradas em nosso site!</p>
+				<a href="https://docs.google.com/spreadsheets/d/1YlDVHp5Gh0nxvYjZSy6sNDgzrbhAZoEncNjVL2F6H7M/edit#gid=779317925" style="display: inline-block; padding: 10px 20px; background-color: #009688; color: white; border-radius: 5px; text-decoration: none; font-weight: bold;">Votar na Logo</a>
+			</div>
+		</div>
+
+		<!-- Container do Mapa -->
+		<div class="map-container">
+			<div id="map" style="height: 400px; width: 75%;"></div>
+
+		</div>
+
+
+
         </section>
 		<footer>
 			<div class="container" style="color: white">
-			  Grupo de apoio à pessoa idosa 
+				Observatório de Políticas Públicas para o Envelhecimento e a Longevidade
 	
 				<br><a class="link-footer" href="https://www.ufv.br/" target="_blank" rel="noopener noreferrer">Universidade Federal de Viçosa</a>
 	
-				<br>36570-900, Viçosa, MG - Brazil
+				<br>36570-900, Viçosa, MG - Brasil
+				<br>Instituto de Políticas Públicas e Desenvolvimento Sustentável 
 	
-				<br>TELEFONE
-				<br> Patrocinadores
 			</div>
 		</footer>
 	
 	<!--Incluir o JS do Bootstrap-->	
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	
+	  <script>
+		document.getElementById('btnCadastrarAcao').addEventListener('click', function() {
+			var formCadastro = document.getElementById('formCadastro');
+			if (formCadastro.style.display === 'none' || formCadastro.style.display === '') {
+				formCadastro.style.display = 'block';
+			} else {
+				formCadastro.style.display = 'none';
+			}
+		});
+	</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	document.getElementById('meuFormulario').addEventListener('submit', function(e) {
+		e.preventDefault(); // Impede o envio padrão do formulário
+	
+		// Coletar dados do formulário
+		var nome = document.getElementById('nome').value;
+		var email = document.getElementById('email').value;
+		var cidade = document.getElementById('cidade').value;
+		var estado = document.getElementById('estado').value;
+		var descricaoAcao = document.getElementById('descricaoAcao').value;
+	
+		// Construir a URL com parâmetros de consulta
+		var url = 'https://script.google.com/macros/s/AKfycbzlJTRsZwEq9rT0KXMN8RiofrHRgxXOaS4WpnTBfCERynAwQ8VlXBJ992A-EjlzR-8_/exec?';
+		url += 'Nome=' + encodeURIComponent(nome);
+		url += '&Email=' + encodeURIComponent(email);
+		url += '&Cidade=' + encodeURIComponent(cidade);
+		url += '&Estado=' + encodeURIComponent(estado);
+		url += '&Descricao=' + encodeURIComponent(descricaoAcao);
+	
+		// Enviar dados para a API via GET
+		fetch(url, {
+			method: "post",
+		})
+		.then(response => response.json()) // Transforma a resposta em JSON
+		.then(data => {
+			console.log('Dados enviados com sucesso:', data);
+			alert('Dados enviados com sucesso!'); // Exibe um alerta de sucesso
+		})
+		.catch(error => {
+			console.error('Dados enviados com sucesso:', error);
+			alert('Dados enviados com sucesso!'); // Exibe um alerta de erro
+		});
+	});
+	});
+	</script>
+
+
+<script>
+    // Função para inicializar o mapa
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 5,
+            center: {lat: -15.7801, lng: -47.9292} // Coordenadas iniciais (Brasília, por exemplo)
+        });
+
+        var geocoder = new google.maps.Geocoder();
+        fetchAndPlaceMarkers(map, geocoder);
+    }
+
+    // Função para buscar dados do CSV e colocar marcadores no mapa
+    function fetchAndPlaceMarkers(map, geocoder) {
+		var url  = "https://script.google.com/macros/s/AKfycbzlJTRsZwEq9rT0KXMN8RiofrHRgxXOaS4WpnTBfCERynAwQ8VlXBJ992A-EjlzR-8_/exec"
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+				console.log("Dados carregados com sucesso", data );
+				const rows = data.data
+                rows.forEach((row) => {
+                    const cidade = row[2];
+					const estado = row[3];
+					console.log("PRINT AQUIII",cidade, estado)
+                    geocodeAddress(geocoder, map, cidade + ', ' + estado);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar dados:', error));
+    }
+
+    // Função para geocodificar o endereço
+    function geocodeAddress(geocoder, map, address) {
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status === 'OK') {
+                map.setCenter(results[0].geometry.location);
+                new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            } else {
+                console.error('Geocodificação não foi bem sucedida por causa de: ' + status);
+            }
+        });
+    }
+</script>
 
 	
-		
-	
+
 	
 	</body>
