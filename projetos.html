@@ -10,6 +10,19 @@
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	  
 	  <link rel="stylesheet" href="styles.css">
+
+	  <script>
+
+					document.addEventListener('DOMContentLoaded', () => {
+					var toggler = document.getElementsByClassName("folder");
+
+					for (var i = 0; i < toggler.length; i++) {
+						toggler[i].addEventListener("click", function() {
+						this.parentElement.querySelector(".nested").classList.toggle("active");
+						});
+					}
+					});
+	  </script>
   
   
 	  <style>
@@ -55,9 +68,35 @@
 		  padding-right: 10px;
 	  }
   
-	  .link-footer{
-			  color: white;
-		  }
+			.container {
+		text-align: left; /* Centraliza o título */
+		}
+
+			#file-tree {
+			display: inline-block; /* Faz a lista começar a partir do ponto central do contêiner */
+			text-align: left; /* Alinha o texto da lista à esquerda */
+			margin-top: 20px; /* Espaçamento entre o título e a lista */
+			}
+
+			.folder {
+			cursor: pointer;
+			user-select: none; /* Impede a seleção do texto */
+			}
+
+			.folder::before {
+			content: '\1F4C1'; /* Ícone de pasta em Unicode */
+			margin-right: 5px;
+			}
+
+			.nested {
+			display: none;
+			}
+
+			.active {
+			display: block;
+}
+
+
   
   
 	  </style>
@@ -69,7 +108,7 @@
 				<div class="container">
 					<div class="row">
 							<div class="col">
-								<p class="mb-0 phone" style="margin: 0px"><a href="home.html" style="font-size: 18px;">Observatório de Políticas Públicas para o Envelhecimento e a Longevidade</a></p>
+								<p class="mb-0 phone" style="margin: 0px"><a href="https://www.ufv.br/" style="font-size: 18px;">Universidade Federal de Viçosa - UFV</a></p>
 							</div>
 					</div>
 				</div>
@@ -95,36 +134,112 @@
 	  </div>
 	</div>
   </nav>
-		<!-- END nav -->
-        <div class="container" style="margin-top: 30px; display: flex;">
-            <div class="col-sm-8">
-    
-                <p class="maior"><b>Projetos</b></p>
-                <div class="clickable-list">
-                    <ul>
-                        <li><a href="https://drive.google.com/file/d/1q0nsOPmhoJ-NbB6QNvTdUVN1w86Q95ZE/view?usp=drive_link" target="_blank">Orientação financeira para empreendedores populares</a></li>
-                        <li><a href="https://drive.google.com/file/d/1-QC2Z7lxJZ7yfQv3-WtaNFkCuDDKm33J/view?usp=drive_link" target="_blank">Longevidade: Memórias Culinárias</a></li>
-                        <li><a href="https://drive.google.com/file/d/15cLIsObuzrtxtRFLeexsb2feuzc8Jx0k/view?usp=drive_link" target="_blank">Escuta e acolhimento da Pessoa Idosa</a></li>
-                        <li><a href="https://drive.google.com/file/d/1wW-qU4dABGDMqheSSH39mfrOXCW4BaYA/view?usp=drive_link" target="_blank">Educar para a vida toda</a></li>
-                        <li><a href="https://drive.google.com/file/d/1ZmjUAlTYecgrchK1B1H8b8FMWVvd47I8/view?usp=drive_link" target="_blank">Educação para um envelhecimento ativo e saudável</a></li>
-                        <li><a href="https://drive.google.com/file/d/1IY8-WD6NGCWXARJXhh3Mawqk6dFOjKMh/view?usp=drive_link" target="_blank">Educação Financeira e qualidade de vida</a></li>
-                        <li><a href="https://drive.google.com/file/d/1tJ7XkhW3ke1E_R4_n297nzopxA-jchYw/view?usp=drive_link" >Desenvolvimento de Agenda Pública</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        </section>
-		<footer>
-			<div class="container" style="color: white">
-				Observatório de Políticas Públicas para o Envelhecimento e a Longevidade
-	
-				<br><a class="link-footer" href="https://www.ufv.br/" target="_blank" rel="noopener noreferrer">Universidade Federal de Viçosa</a>
-	
-				<br>36570-900, Viçosa, MG - Brasil
-				<br>Instituto de Políticas Públicas e Desenvolvimento Sustentável
-	
-			</div>
-		</footer>
+
+
+
+  <div class="container" style="margin-top: 30px;">
+
+	<p class="maior" style="text-align:left;"><b>Biblioteca Virtual</b></p>
+	<div style="margin-top: 20px;">
+  
+	  <ul id="file-tree">
+		<li><span class="folder">Teses Dissertações e Monografias</span>
+		<ul class="nested">
+			<li><a href="https://drive.google.com/file/d/1cXXtjlwHsnGyQOSPuO2zQ7C8jS9dj_PT/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Velhices Marginalizadas</a></li>
+			<li><a href="https://drive.google.com/file/d/1cKLCjsWtna7x64lFu4uYOI4N5LAEqbmt/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Analise de garantia do direto das pessoas idosas</a></li>
+			<li><a href="https://drive.google.com/file/d/1cIBI4VhiCuqAqZnbKxrcUKIVwOC3T46S/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Envelhecimento Ativo</a></li>
+			<li><a href="https://drive.google.com/file/d/1cTK4pn3Zs7hUUphuwneP1_Cx6-mKEztZ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Quem cuidará de nós em 2030</a></li>
+			<li><a href="https://drive.google.com/file/d/1ccnNWJ5vEGW_zV87q-M0Ycm_QXr26Rb1/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Proposta do gerenciamento do Novo Fundo do Idoso no município de São Paulo</a></li>
+			<li><a href="https://drive.google.com/file/d/1cHa4SjpeGRfZIdCt_YCDuu8PCQNnyhrY/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Participação e Controle Social dos Idosos na Cena Contemporânea</a></li>
+			<li><a href="https://drive.google.com/file/d/1cNvAoAZ-xoFIvVszOgFm-8nThSfrS7C2/view?usp=drive_link" target="_blank" rel="noopener noreferrer">O Exercício da Democracia em Conselhos de Saúde</a></li>
+			<li><a href="https://drive.google.com/file/d/1cNRgjkmwgFpA-8ewLmcaMGROwKFbrd7K/view?usp=drive_link" target="_blank" rel="noopener noreferrer">O conselho Municipal do Idoso de Belém e a Participação</a></li>
+			<li><a href="https://drive.google.com/file/d/1bZdPuIYEA0_yo_pB6BwH72p_LrrryLCC/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Implantação do Fundo do Idoso no Município de São Paulo</a></li>
+			<li><a href="https://drive.google.com/file/d/1bw8mn442kPuFvwZ1nin67csUu5WkltJo/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Grande Conselho Municipal do Idoso de São Paulo</a></li>
+			<li><a href="https://drive.google.com/file/d/1bw8mn442kPuFvwZ1nin67csUu5WkltJo/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Estrutura e Funcionamento Dos Conselhos Municipais do Idoso</a></li>
+			<li><a href="https://drive.google.com/file/d/1be06kr0hyI4pxwPbBCi1YHj7kvAqNa19/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Empréstimo Consignado, a Hipervulnerabilidade da Pessoa Idosa</a></li>
+			<li><a href="https://drive.google.com/file/d/1bwL0jsZy62UlnsjT7sWu8pArzu2G2Gkw/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Dissertação Colcha de Retalhos</a></li>
+			<li><a href="https://drive.google.com/file/d/1bi6y4QG5t6rzVt5iFgNXF-Ql5R3DtCZv/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Denúncias e Ações de Enfrentamento à Violência Intrafamiliar </a></li>
+			<li><a href="https://drive.google.com/file/d/1bvf-5BsuK7pQv48Rf-fXs2C0Ytv1O6U8/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Conselho Nacional dos Direitos do Idoso</a></li>
+			<li><a href="https://drive.google.com/file/d/1cPFyGnMWvXmMxca9sKZrICpVQhsymjzh/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Comunicação Conselhista e Teoria Democrática Deliberativa</a></li>
+			<li><a href="https://drive.google.com/file/d/1c-zlwDA2Oe0NuSz-5pPrivq0vCjJJdxj/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Abuso Financeiro Intrafamiliar a Pessoa Idosa</a></li>
+		</ul>
+		</li>
+
+		<li><span class="folder">Relatórios e Projetos</span>
+			<ul class="nested">
+				<li><a href="https://drive.google.com/file/d/1bTmBnqnoEaEc_COjSZBvw_ejXtxz68WW/view?usp=drive_link" target="_blank" rel="noopener noreferrer">World Population Ageing</a></li>
+				<li><a href="https://drive.google.com/file/d/1c66eDMI2sgzm1v9UHnXWEfgUGc8ocZLx/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Sobre ILPIs de Minas</a></li>
+				<li><a href="https://drive.google.com/file/d/1bSgBu83tpsdluvRmiLHgCiNf_WeQXOqU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Projetos Conselho Excelente</a></li>
+				<li><a href="https://drive.google.com/file/d/1acuQMVk-6OJrAkvrazGdaFE4yTpjLtx6/view?usp=drive_link" target="_blank" rel="noopener noreferrer">I Diagnóstico Nacional FFC</a></li>
+				<li><a href="https://drive.google.com/file/d/1aBlqD9R02BgtSz9qRIZN2FUPTBkJkJzV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">II Diagnóstico Nacional FFC</a></li>
+				<li><a href="https://drive.google.com/file/d/1acyO7RxhnnHudyOnhfcnBUHLE7XLyLja/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Dez anos do Conselho Nacional dos Direitos do Idoso</a></li>
+			</ul>
+		</li>
+
+		<li><span class="folder">Pacto Nacional de Implementação dos Direitos da Pessoa Idosa</span>
+			<ul class="nested">
+				<li><a href="https://drive.google.com/file/d/1_kzKHzURqA25SAZfYwsrwSCD_R-N91m_/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Cartilha Pacto de Envelhecimento</a></li>
+			</ul>
+		</li>
+
+
+		<li><span class="folder">Guia EBAPI - Estratégia Brasil Amigo da Pessoa Idosa</span>
+			<ul class="nested">
+				<li><a href="https://drive.google.com/file/d/1aTdM3n2dg7SoAxxq97NVgUPVKxmcV2gk/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Guia I - Introdução à Estratégia</a></li>
+				<li><a href="https://drive.google.com/file/d/1aEHyE_D6LLufKn0teIcdNQA5no5wA1qr/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Guia II - Implementação da Estratégia</a></li>
+				<li><a href="https://drive.google.com/file/d/1aKPa6CFGcITynwN6gNvWUOJJRr6A2KU9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Guia III - Como Fazer um Diagnóstico</a></li>
+				<li><a href="https://drive.google.com/file/d/1aOLdqbN7Om65NF2HIkA-SkM3rTlVZNe-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Guia IV - Como Fazer um Plano de Ação </a></li>
+			</ul>
+		</li>
+
+
+		<li><span class="folder">Artigos Acadêmicos</span>
+			<ul class="nested">
+				<li><a href="https://drive.google.com/file/d/1aTdM3n2dg7SoAxxq97NVgUPVKxmcV2gk/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Vulnerabilidade e Declínio Funcional em pessoas idosas da Atenção Primária à Saúde: estudo longitudinal</a></li>
+				<li><a href="https://drive.google.com/file/d/1aEHyE_D6LLufKn0teIcdNQA5no5wA1qr/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Fundo Nacional do Idoso: Um Instrumento de Fortalecimento dos Conselhos e da Garantia dos Direitos da Pessoa Idosa</a></li>
+				<li><a href="https://drive.google.com/file/d/1aKPa6CFGcITynwN6gNvWUOJJRr6A2KU9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Envelhecimento Populacional No Conselho Regional De Desenvolvimento do Litoral/RS e as Aplicações para Políticas Públicas</a></li>
+				<li><a href="https://drive.google.com/file/d/1aOLdqbN7Om65NF2HIkA-SkM3rTlVZNe-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Contribuição da Socialização e das Políticas Públicas para a Promoção do Envelhecimento Saudável</a></li>
+				<li><a href="https://drive.google.com/file/d/1aTdM3n2dg7SoAxxq97NVgUPVKxmcV2gk/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Estratégia Brasil Amigo da Pessoa Idosa em governos locais brasileiros</a></li>
+				<li><a href="https://drive.google.com/file/d/1aEHyE_D6LLufKn0teIcdNQA5no5wA1qr/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Violence Against The Older Adult: Perceptions of the Basic Health Care Teams</a></li>
+				<li><a href="https://drive.google.com/file/d/1aKPa6CFGcITynwN6gNvWUOJJRr6A2KU9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Trajetória das Políticas Públicas Brasileiras para Pessoas Idosas frente a Década do Envelhecimento Saudável</a></li>
+				<li><a href="https://drive.google.com/file/d/1aOLdqbN7Om65NF2HIkA-SkM3rTlVZNe-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Inclusão Social do Idoso nas Políticas Sociais</a></li>
+				<li><a href="https://drive.google.com/file/d/1aTdM3n2dg7SoAxxq97NVgUPVKxmcV2gk/view?usp=drive_link" target="_blank" rel="noopener noreferrer">The Policy Discourse of Active Ageing: Some Reflections</a></li>
+				<li><a href="https://drive.google.com/file/d/1aEHyE_D6LLufKn0teIcdNQA5no5wA1qr/view?usp=drive_link" target="_blank" rel="noopener noreferrer">The Limits Of Care</a></li>
+				<li><a href="https://drive.google.com/file/d/1aKPa6CFGcITynwN6gNvWUOJJRr6A2KU9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">The Felling of Loneliness In Old Age</a></li>
+				<li><a href="https://drive.google.com/file/d/1aOLdqbN7Om65NF2HIkA-SkM3rTlVZNe-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Programas de Saúde para Pessoas Idosas no Brasil</a></li>
+				<li><a href="https://drive.google.com/file/d/1aTdM3n2dg7SoAxxq97NVgUPVKxmcV2gk/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Políticas Públicas para Pessoas Idosas no Brasil uma Revisão Integrativa</a></li>
+				<li><a href="https://drive.google.com/file/d/1aEHyE_D6LLufKn0teIcdNQA5no5wA1qr/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Perfil da Pessoa Idosa Vítima da Violência Intrafamiliar</a></li>
+				<li><a href="https://drive.google.com/file/d/1aKPa6CFGcITynwN6gNvWUOJJRr6A2KU9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Percepção das Pessoas Idosas Frente ao Respeito e a Inclusão Social</a></li>
+				<li><a href="https://drive.google.com/file/d/1aOLdqbN7Om65NF2HIkA-SkM3rTlVZNe-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Participação de Idosos Em fóruns de Cidadania </a></li>
+			</ul>
+		</li>
+
+	  </ul>
+  
+	</div>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+
+	<footer>
+		<div class="container" style="color: white">
+			Observatório de Políticas Públicas para o Envelhecimento e a Longevidade
+
+			<br><a class="link-footer" href="https://www.ufv.br/" target="_blank" rel="noopener noreferrer">Universidade Federal de Viçosa</a>
+
+			<br>36570-900, Viçosa, MG - Brasil
+			<br>Instituto de Políticas Públicas e Desenvolvimento Sustentável
+
+		</div>
+	</footer>
 	
 		
 	
